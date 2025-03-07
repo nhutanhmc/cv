@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
-import { Database, Globe, Server, Smartphone, Cloud } from "lucide-react"
+import { Database, Globe, Server, Smartphone, Cloud, Settings } from "lucide-react"
 
 export default function Skills() {
   const [ref, inView] = useInView({
@@ -44,6 +44,13 @@ export default function Skills() {
       icon: <Cloud className="h-5 w-5" />,
       skills: ["Firebase", "MongoDB Cloud", "Supabase", "Cloudinary", "Railway"],
     },
+    {
+      id: "devops",
+      name: "DevOps & Automation",
+      icon: <Settings className="h-5 w-5" />,
+      skills: ["Kafka", "GitHub Actions", "CI/CD", "Automation"],
+    }
+    
   ]
 
   return (
