@@ -15,14 +15,14 @@ export default function Experience() {
   const experiences = [
     {
       title: "Backend Developer",
-      company: "QS Land",
+      company: "Company: QS Land",
       period: "Nov 2024 - Jan 2025",
       description: "Developed a customer file management system using Node.js and Express.js.",
       technologies: ["Node.js", "Express.js", "MongoDB", "RESTful API"],
     },
     {
       title: "Fullstack Developer",
-      company: "Keizu",
+      company: "Company: Keizu",
       period: "May 2022 - Nov 2022",
       description: "Developed a Customer Relationship Management (CRM) system using Salesforce.",
       technologies: ["Salesforce", "CRM", "JavaScript", "Apex", "Lightning Web Components"],

@@ -97,12 +97,6 @@ export default function Projects() {
                         Code
                       </Link>
                     </Button>
-                    <Button asChild size="sm">
-                      <Link href={project.demo} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        Demo
-                      </Link>
-                    </Button>
                   </CardFooter>
                 </Card>
               </motion.div>

@@ -50,7 +50,7 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button asChild size="lg">
-              <Link href="#contact">Get in Touch</Link>
+              <Link href="#skills">Skill</Link>
             </Button>
             <Button asChild variant="outline" size="lg">
               <Link href="#projects">View Projects</Link>
