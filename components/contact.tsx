@@ -10,13 +10,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import emailjs from "emailjs-com";
 
-// Cấu hình EmailJS
-const EMAILJS_CONFIG = {
-  serviceID: "service_fl24z6e",
-  templateID: "template_664clpc",
-  publicKey: "QP6YuNN3-xqNNJbQK",
-};
-
 export default function Contact() {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -44,18 +37,18 @@ export default function Contact() {
       return;
     }
 
-    // Gửi email qua EmailJS sử dụng cấu hình từ biến EMAILJS_CONFIG
+    // Gửi email qua EmailJS
     emailjs
       .send(
-        EMAILJS_CONFIG.serviceID,
-        EMAILJS_CONFIG.templateID,
+        "service_fl24z6e",       
+        "template_1fkl7rg",      
         {
           from_name: formData.name,
           from_email: formData.email,
           subject: formData.subject,
           message: formData.message,
         },
-        EMAILJS_CONFIG.publicKey
+        "QP6YuNN3-xqNNJbQK"      
       )
       .then((result) => {
         console.log("Email successfully sent!", result.text);
@@ -63,7 +56,7 @@ export default function Contact() {
         setFormData({ name: "", email: "", subject: "", message: "" });
       })
       .catch((error) => {
-        console.error("Failed to send email:", error);
+        console.error("Failed to send email:", error.text);
         alert("Failed to send message. Please try again later.");
       });
   };
