@@ -33,15 +33,15 @@ export default function Contact() {
   
     // Gửi email qua EmailJS
     emailjs.send(
-      'YOUR_SERVICE_ID',       // Service ID từ EmailJS (được cấu hình để sử dụng tài khoản anhxavia25@gmail.com)
-      'YOUR_TEMPLATE_ID',      // Template ID (trong template, người nhận là nhutanhmc@gmail.com)
+      'service_fl24z6e',       // Service ID từ EmailJS (được cấu hình để sử dụng tài khoản anhxavia25@gmail.com)
+      'template_664clpc',      // Template ID (trong template, người nhận là nhutanhmc@gmail.com)
       {
         from_name: formData.name,
         from_email: formData.email,
         subject: formData.subject,
         message: formData.message,
       },
-      'YOUR_USER_ID'           // Public key/User ID từ EmailJS
+      'QP6YuNN3-xqNNJbQK'           // Public key/User ID từ EmailJS
     )
       .then((result) => {
         console.log('Email successfully sent!', result.text);
