@@ -21,11 +21,24 @@ export default function Education() {
   ]
 
   const certifications = [
-    "Project Management Principles and Practices",
-    "Software Development Lifecycle",
-    "User Experience Research and Design",
-    "Agile Software Development",
+    {
+      name: "Project Management Principles and Practices",
+      link: "https://www.coursera.org/account/accomplishments/specialization/3W4X4CTSAECX",
+    },
+    {
+      name: "Software Development Lifecycle",
+      link: "https://www.coursera.org/account/accomplishments/specialization/ASX3KRAAWK4G",
+    },
+    {
+      name: "User Experience Research and Design",
+      link: "https://www.coursera.org/account/accomplishments/specialization/TYC6A4942ZE7",
+    },
+    {
+      name: "Agile Software Development",
+      link: "https://www.coursera.org/account/accomplishments/verify/MNAKTUYAC5PP",
+    },
   ]
+
 
   return (
     <section id="education" className="py-20 bg-muted/30">
@@ -75,7 +88,15 @@ export default function Education() {
                   {certifications.map((cert, index) => (
                     <li key={index} className="flex items-start">
                       <span className="mr-2 mt-1 h-2 w-2 rounded-full bg-primary" />
-                      <span>{cert}</span>
+                      {/* Link đến trang chứng chỉ */}
+                      <a
+                        href={cert.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline"
+                      >
+                        {cert.name}
+                      </a>
                     </li>
                   ))}
                 </ul>
