@@ -50,7 +50,7 @@ export default function Skills() {
       icon: <Settings className="h-5 w-5" />,
       skills: ["Kafka", "GitHub Actions", "CI/CD", "Automation"],
     }
-    
+
   ]
 
   return (
@@ -67,7 +67,7 @@ export default function Skills() {
           </h2>
 
           <Tabs defaultValue="frontend" className="max-w-4xl mx-auto">
-            <TabsList className="grid grid-cols-2 md:grid-cols-5 mb-8">
+            <TabsList className="flex flex-wrap gap-2 mb-8">
               {skillCategories.map((category) => (
                 <TabsTrigger key={category.id} value={category.id} className="flex items-center gap-2">
                   {category.icon}
@@ -75,6 +75,7 @@ export default function Skills() {
                 </TabsTrigger>
               ))}
             </TabsList>
+
 
             {skillCategories.map((category) => (
               <TabsContent key={category.id} value={category.id}>
