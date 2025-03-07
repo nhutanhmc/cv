@@ -41,7 +41,7 @@ export default function Contact() {
     emailjs
       .send(
         "service_fl24z6e",       
-        "template_1fkl7rg",      
+        "template_krmj4bg",      
         {
           from_name: formData.name,
           from_email: formData.email,
