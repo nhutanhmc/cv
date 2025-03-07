@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Phone, MapPin, Send } from "lucide-react"
+import emailjs from 'emailjs-com';
 
 export default function Contact() {
   const [ref, inView] = useInView({
@@ -28,16 +29,29 @@ export default function Contact() {
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    // Form submission logic would go here
-    console.log("Form submitted:", formData)
-    alert("Thank you for your message! I'll get back to you soon.")
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    })
+    e.preventDefault();
+  
+    // Gửi email qua EmailJS
+    emailjs.send(
+      'YOUR_SERVICE_ID',       // Service ID từ EmailJS (được cấu hình để sử dụng tài khoản anhxavia25@gmail.com)
+      'YOUR_TEMPLATE_ID',      // Template ID (trong template, người nhận là nhutanhmc@gmail.com)
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      },
+      'YOUR_USER_ID'           // Public key/User ID từ EmailJS
+    )
+      .then((result) => {
+        console.log('Email successfully sent!', result.text);
+        alert("Thank you for your message! I'll get back to you soon.");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      })
+      .catch((error) => {
+        console.log('Failed to send email:', error.text);
+        alert('Failed to send message. Please try again later.');
+      });
   }
 
   const contactInfo = [
